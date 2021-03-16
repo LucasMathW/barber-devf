@@ -1,5 +1,5 @@
 Arguments: 
-  /home/matheus/.nvm/versions/node/v12.18.3/bin/node /home/matheus/.nvm/versions/node/v12.18.3/bin/yarn add date-nfs
+  /home/matheus/.nvm/versions/node/v12.18.3/bin/node /home/matheus/.nvm/versions/node/v12.18.3/bin/yarn add @types/typeorm
 
 PATH: 
   /home/matheus/Android/sdk/emulator:/home/matheus/Android/sdk/tools:/home/matheus/.zinit/polaris/sbin:/home/matheus/.zinit/polaris/bin:/home/matheus/.nvm/versions/node/v12.18.3/bin:/home/matheus/Android/sdk/emulator:/home/matheus/Android/sdk/tools:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/matheus/Android/Sdk/tools:/home/matheus/Android/Sdk/platform-tools:/home/matheus/.yarn/bin:/usr/local/bin:/home/matheus/Android/Sdk/tools:/home/matheus/Android/Sdk/platform-tools:/home/matheus/.yarn/bin:/usr/local/bin
@@ -14,7 +14,7 @@ Platform:
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/date-nfs: Not found
+  Error: https://registry.yarnpkg.com/@types%2ftypeorm: Not found
       at Request.params.callback [as _callback] (/home/matheus/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/lib/cli.js:66988:18)
       at Request.self.callback (/home/matheus/.nvm/versions/node/v12.18.3/lib/node_modules/yarn/lib/cli.js:140662:22)
       at Request.emit (events.js:315:20)
@@ -39,8 +39,11 @@ npm manifest:
       "typeorm": "ts-node-dev ./node_modules/typeorm/cli.js"
     },
     "dependencies": {
+      "@types/date-fns": "^2.6.0",
+      "date-fns": "^2.19.0",
       "express": "^4.17.1",
       "pg": "^8.5.1",
+      "reflect-metadata": "^0.1.13",
       "typeorm": "^0.2.31",
       "uuid": "^8.3.2"
     },
@@ -145,6 +148,13 @@ Lockfile:
     integrity sha512-ePPA/JuI+X0vb+gSWlPKOY0NdNAie/rPUqX2GUPpbZwiKTkSPhjXWuee47E4MtE54QVzGCQMQkAL6JhV2E1+cQ==
     dependencies:
       "@types/node" "*"
+  
+  "@types/date-fns@^2.6.0":
+    version "2.6.0"
+    resolved "https://registry.yarnpkg.com/@types/date-fns/-/date-fns-2.6.0.tgz#b062ca46562002909be0c63a6467ed173136acc1"
+    integrity sha1-sGLKRlYgApCb4MY6ZGftFzE2rME=
+    dependencies:
+      date-fns "*"
   
   "@types/express-serve-static-core@^4.17.18":
     version "4.17.18"
@@ -670,6 +680,11 @@ Lockfile:
     integrity sha1-mI3zP+qxke95mmE2nddsF635V+o=
     dependencies:
       array-find-index "^1.0.1"
+  
+  date-fns@*, date-fns@^2.19.0:
+    version "2.19.0"
+    resolved "https://registry.yarnpkg.com/date-fns/-/date-fns-2.19.0.tgz#65193348635a28d5d916c43ec7ce6fbd145059e1"
+    integrity sha512-X3bf2iTPgCAQp9wvjOQytnf5vO5rESYRXlPIVcgSbtT5OTScPcsf9eZU+B/YIkKAtYr5WeCii58BgATrNitlWg==
   
   dateformat@~1.0.4-1.2.3:
     version "1.0.12"
