@@ -27,7 +27,8 @@
       {
         "ts": "never"
       }
-    ]
+    ],
+    "camelcase": [{"properties": "never"}]
   },
   "settings": {
     "import/resolver":{
