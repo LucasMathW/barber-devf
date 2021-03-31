@@ -4,24 +4,17 @@ import CreateUserService from '../services/createUserService';
 
 const usersRouter = Router();
 
-// usersRouter.get('/', async (request, response) => {
-//   const appointmentsRepository = getCustomRepository(AppointmentsRepository);
-//   const appointments = await appointmentsRepository.find();
-
-//   return response.json(appointments);
-// });
-
-interface UserProps{
-  name: string,
-  email: string
-  password?: string
+interface UserProps {
+  name: string;
+  email: string;
+  password?: string;
 }
 
 usersRouter.post('/', async (request, response) => {
   try {
-    const { name, email, password } = request.body
+    const { name, email, password } = request.body;
     const createUser = new CreateUserService();
-    const user: UserProps = await createUser.execute({name, email, password});
+    const user: UserProps = await createUser.execute({ name, email, password });
 
     delete user.password;
     return response.json(user);
