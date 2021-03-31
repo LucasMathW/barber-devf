@@ -1,24 +1,15 @@
 import { Router } from 'express';
-import User from '../models/User';
 import AuthenticateUserService from '../services/AuthenticateUserService';
 
 const sessionsRouter = Router();
-
-// sessionsRouter.get('/', async (request, response) => {
-//   const appointmentsRepository = getCustomRepository(AppointmentsRepository);
-//   const appointments = await appointmentsRepository.find();
-
-//   return response.json(appointments);
-// });
-
 
 sessionsRouter.post('/', async (request, response) => {
   try {
     const { email, password } = request.body;
     const authenticateUser = new AuthenticateUserService()
-    const { user } =  await authenticateUser.execute({email, password});
+    const { user, token } =  await authenticateUser.execute({email, password});
 
-    return response.json({user});
+    return response.json({user, token});
   } catch (err) {
     return response.status(400).json({ error: err.message });
   }
