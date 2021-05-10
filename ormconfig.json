@@ -6,12 +6,12 @@
   "password" : "docker",
   "database": "gostack_gobarber",
   "entities":[
-    "./src/models/*.ts"
+    "./src/modules/**/infra/typeorm/entities"
   ],
   "migrations":[
-    "./src/databases/migrations/*.ts"
+    "./src/shared/infra/typeorm/migrations/*.ts"
   ],
   "cli":{
-    "migrationsDir": "./src/databases/migrations/"
+    "migrationsDir": "./src/shared/infra/typeorm/migrations/"
   }
 }
