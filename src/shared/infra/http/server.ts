@@ -8,6 +8,7 @@ import AppError from '@shared/errors/AppError';
 import routes from '@shared/infra/http/routes';
 
 import '@shared/infra/typeorm';
+import '@shared/container';
 
 const app = express();
 app.use(cors());
@@ -22,7 +23,6 @@ app.use(
         message: err.message,
       });
     }
-
     return response.status(500).json({
       status: 'error',
       message: 'internal server error',
