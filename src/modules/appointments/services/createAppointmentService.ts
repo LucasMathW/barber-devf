@@ -31,6 +31,7 @@ class createAppointmentService {
       provider_id,
       date: appointmentOfDate,
     });
+
     return appointment;
   }
 }
