@@ -8,6 +8,9 @@ import IAppointmentsRepository from '@modules/appointments/repositories/IAppoint
 import UsersRepository from '@modules/users/infra/typeorm/repositories/UsersRepository';
 import IUsersRepository from '@modules/users/repositories/IUsersRepository';
 
+// import EmailProvider from ''
+// import IEMailProvider from '@shared/container/providers/EmailProvider/models/IEmailProvides';
+
 container.registerSingleton<IAppointmentsRepository>(
   'AppointmentsRepository',
   AppointmentsRepository,
@@ -17,3 +20,5 @@ container.registerSingleton<IUsersRepository>(
   'UsersRepository',
   UsersRepository,
 );
+
+// container.registerSingleton<IEMailProvider>('EmailProvider');
