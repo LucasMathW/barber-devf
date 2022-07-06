@@ -1,4 +1,3 @@
-import { hash } from 'bcryptjs';
 import AppError from '@shared/errors/AppError';
 import { inject, injectable } from 'tsyringe';
 import User from '../infra/typeorm/entities/User';
@@ -10,6 +9,7 @@ interface Request {
   email: string;
   password: string;
 }
+
 @injectable()
 class CreateUserService {
   constructor(
