@@ -1,4 +1,5 @@
 import AppError from '@shared/errors/AppError';
+import { getHours } from 'date-fns';
 import FakeUsersRepository from '../repositories/fakes/FakeUsersRepository';
 import FakeUserTokensRepository from '../repositories/fakes/FakeUserTokensRepository';
 import FakeHashProvider from '../provider/hashProvider/fakes/FakeHashProvider';
@@ -62,6 +63,29 @@ describe('Recovery password', () => {
       resetPasswordService.execute({
         token,
         password: '651234',
+      }),
+    ).rejects.toBeInstanceOf(AppError);
+  });
+
+  it('Should not be able reset password with token more than 2 hours', async () => {
+    const user = await fakeUsersRepository.create({
+      name: 'Lucas Matheus',
+      email: 'lucasalencar@107@gmail.com',
+      password: '12345678',
+    });
+
+    const { token } = await fakeUserTokensRepository.generated(user.id);
+
+    jest.spyOn(Date, 'now').mockImplementation(() => {
+      const customDate = new Date();
+
+      return customDate.setHours(customDate.getHours() + 3);
+    });
+
+    await expect(
+      resetPasswordService.execute({
+        password: '12312345',
+        token,
       }),
     ).rejects.toBeInstanceOf(AppError);
   });
