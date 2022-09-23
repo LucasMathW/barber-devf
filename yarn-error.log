@@ -1,30 +1,25 @@
 Arguments: 
-  /home/matheus/.nvm/versions/node/v16.9.0/bin/node /home/matheus/.nvm/versions/node/v16.9.0/bin/yarn add @types/handlerbars
+  /home/matheus/.nvm/versions/node/v16.17.0/bin/node /home/matheus/.nvm/versions/node/v16.17.0/bin/yarn test
 
 PATH: 
-  /home/matheus/.zinit/polaris/bin:/home/matheus/.nvm/versions/node/v16.9.0/bin:/home/matheus/.fastlane/bin:/home/matheus/.local/bin:/home/matheus/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/home/matheus/android-studio/bin:/home/matheus/Android/Sdk/emulator:/home/matheus/Android/Sdk/tools:/home/matheus/Android/Sdk/tools/bin:/home/matheus/Android/Sdk/platform-tools:/usr/local/bin
+  /home/matheus/.local/share/zinit/polaris/bin:/home/matheus/.nvm/versions/node/v16.17.0/bin:/home/matheus/bin:/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/snap/bin
 
 Yarn version: 
-  1.22.11
+  1.22.19
 
 Node version: 
-  16.9.0
+  16.17.0
 
 Platform: 
   linux x64
 
 Trace: 
-  Error: https://registry.yarnpkg.com/@types%2fhandlerbars: Not found
-      at Request.params.callback [as _callback] (/home/matheus/.nvm/versions/node/v16.9.0/lib/node_modules/yarn/lib/cli.js:66992:18)
-      at Request.self.callback (/home/matheus/.nvm/versions/node/v16.9.0/lib/node_modules/yarn/lib/cli.js:140763:22)
-      at Request.emit (node:events:394:28)
-      at Request.<anonymous> (/home/matheus/.nvm/versions/node/v16.9.0/lib/node_modules/yarn/lib/cli.js:141735:10)
-      at Request.emit (node:events:394:28)
-      at IncomingMessage.<anonymous> (/home/matheus/.nvm/versions/node/v16.9.0/lib/node_modules/yarn/lib/cli.js:141657:12)
-      at Object.onceWrapper (node:events:513:28)
-      at IncomingMessage.emit (node:events:406:35)
-      at endReadableNT (node:internal/streams/readable:1343:12)
-      at processTicksAndRejections (node:internal/process/task_queues:83:21)
+  SyntaxError: /home/matheus/package.json: Unexpected string in JSON at position 41
+      at JSON.parse (<anonymous>)
+      at /home/matheus/.nvm/versions/node/v16.17.0/lib/node_modules/yarn/lib/cli.js:1629:59
+      at Generator.next (<anonymous>)
+      at step (/home/matheus/.nvm/versions/node/v16.17.0/lib/node_modules/yarn/lib/cli.js:310:30)
+      at /home/matheus/.nvm/versions/node/v16.17.0/lib/node_modules/yarn/lib/cli.js:321:13
 
 npm manifest: 
   {
@@ -32,7 +27,8 @@ npm manifest:
     "version": "1.0.0",
     "main": "index.js",
     "author": "LucasMathW <lucasag0408@outlook.com>",
-    "license": "MIT",
+    "license": "MIT license",
+    "private": true,
     "scripts": {
       "build": "tsc",
       "dev:server": "ts-node-dev -r tsconfig-paths/register --inspect --transpile-only --ignore-watch node_modules src/shared/infra/http/server.ts",
