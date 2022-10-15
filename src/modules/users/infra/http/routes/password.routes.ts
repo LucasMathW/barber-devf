@@ -8,6 +8,6 @@ const forgotPasswordController = new ForgotPasswordController();
 const resetPasswordController = new ResetPasswordController();
 
 passwordRouter.post('/forgot', forgotPasswordController.sendForgotPassword);
-passwordRouter.post('/reset', resetPasswordController.sendForgotPassword);
+passwordRouter.post('/reset', resetPasswordController.resetPassword);
 
 export default passwordRouter;
