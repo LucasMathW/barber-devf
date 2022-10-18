@@ -8,7 +8,7 @@ const profileRouter = Router();
 const profileController = new ProfileController();
 
 profileRouter.use(ensureAuthenticated);
-profileRouter.post('/update', profileController.update);
-profileRouter.post('/show', profileController.show);
+profileRouter.put('/update', profileController.update);
+profileRouter.get('/show', profileController.show);
 
 export default profileRouter;
