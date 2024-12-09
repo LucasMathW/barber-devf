@@ -29,7 +29,7 @@ app.use(
       });
     }
 
-    // console.error("ERROR =>", err)
+    console.error("ERROR =>", err)
 
     return response.status(500).json({
       status: 'error',
