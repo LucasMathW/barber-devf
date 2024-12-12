@@ -2,6 +2,7 @@ import { Request, Response } from 'express';
 import { container } from 'tsyringe';
 import UpdateProfileService from '@modules/users/services/UpdateProfileService';
 import ShowProfileService from '@modules/users/services/ShowProfileService';
+import { classToClass } from 'class-transformer';
 
 interface UserProps {
   name: string;
@@ -36,7 +37,7 @@ export default class ProfileController {
       password,
     });
 
-    delete user.password;
-    return response.json(user);
+
+    return response.json(classToClass(user));
   }
 }
