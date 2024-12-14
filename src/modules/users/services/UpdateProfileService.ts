@@ -8,7 +8,7 @@ interface Request {
   user_id: string;
   name: string;
   email: string;
-  old_password?: string;
+  oldPassword?: string;
   password?: string;
 }
 
@@ -26,7 +26,7 @@ class UpdateProfileService {
     user_id,
     name,
     email,
-    old_password,
+    oldPassword,
     password,
   }: Request): Promise<User> {
     const user = await this.usersRepository.findById(user_id);
@@ -44,13 +44,13 @@ class UpdateProfileService {
     user.name = name;
     user.email = email;
 
-    if (password && !old_password) {
+    if (password && !oldPassword) {
       throw new AppError('You need the old password');
     }
 
-    if (password && old_password) {
+    if (password && oldPassword) {
       const hashedPassword = await this.hashProvider.compareHash(
-        old_password,
+        oldPassword,
         user.password,
       );
 
