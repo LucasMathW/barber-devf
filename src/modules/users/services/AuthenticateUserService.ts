@@ -5,6 +5,7 @@ import { inject, injectable } from 'tsyringe';
 import User from '../infra/typeorm/entities/User';
 import IUsersRepository from '../repositories/IUsersRepository';
 import IHashProvider from '../provider/hashProvider/models/IHashProvider';
+import { classToClass } from 'class-transformer';
 
 interface Request {
   email: string;
