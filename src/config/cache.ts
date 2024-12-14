@@ -1,4 +1,3 @@
-import ICacheProvider from '@shared/container/providers/CacheProvider/models/ICacheProvider';
 import { RedisOptions } from 'ioredis'
 
 interface ICacheConfig {
@@ -14,8 +13,8 @@ export default {
 
   config: {
     redis: {
-      host: "localhost",
-      port: 6379,
+      host: process.env.REDIS_HOST,
+      port: Number(process.env.REDIS_PORT),
       password: undefined,
     },
   },
